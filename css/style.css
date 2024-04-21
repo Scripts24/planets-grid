@@ -99,3 +99,66 @@ input[type="checkbox"] {
     width: 2.5rem;
 }
 
+/** MAIN */
+
+.main-section {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    align-items          : center;
+    gap                  : 3rem;
+}
+
+.main-texts {
+    order: 1;
+}
+
+.main-title {
+    font-size     : 3.5rem;
+    letter-spacing: 4px;
+    margin-bottom : 1.5rem;
+}
+
+.main-paragraph {
+    font-size  : 1.2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.main-img {
+    width: 100%;
+}
+
+/** CARDS */
+
+.cards {
+    display              : grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+    gap                  : 2rem;
+    padding              : 80px 0;
+}
+
+.cards-item {
+    padding   : 2rem 1.5rem;
+    border    : 2px dotted var(--color-text);
+    text-align: center;
+}
+
+.cards-title {
+    font-size     : .8rem;
+    text-transform: uppercase;
+    margin-bottom : 1rem;
+}
+
+.cards-info {
+    font-size  : 2rem;
+    font-weight: 300;
+}
+
+
+/** MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .main-section {
+        grid-template-columns: 1fr;
+    }
+}
