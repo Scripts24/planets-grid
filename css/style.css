@@ -8,6 +8,94 @@
     text-decoration: none;
 }
 
-body {
-    font-family: 'League Spartan', sans-serif;
+:root {
+    --bg-main   : #22254b;
+    --bg-menu   : #20556d;
+    --color-text: #f1f1f1;
 }
+
+body {
+    color           : var(--color-text);
+    background-color: var(--bg-main);
+    font-family     : 'League Spartan', sans-serif;
+}
+
+.container {
+    width    : 90%;
+    max-width: 1200px;
+    margin   : 0 auto;
+    overflow : hidden;
+}
+
+/** NAV */
+
+.nav {
+    --menu-mostrar       : polygon(0 0, 0 0, 0 100%, 0 100%);
+    --opacidad-abrir     : 1;
+    --puntero-abrir      : unset;
+    --opacidad-cerrar    : 0;
+    --puntero-cerrar     : none;
+    height               : 100px;
+    display              : grid;
+    grid-template-columns: max-content max-content;
+    grid-template-areas  : "logo menu";
+    justify-content      : space-between;
+    align-items          : center;
+}
+
+.nav:has(input[type="checkbox"]:checked) {
+    --menu-mostrar   : polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --opacidad-abrir : 0;
+    --puntero-abrir  : none;
+    --opacidad-cerrar: 1;
+    --puntero-cerrar : unset;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.nav-menu {
+    position        : fixed;
+    inset           : 0;
+    background-color: var(--bg-menu);
+    display         : grid;
+    place-content   : center;
+    text-align      : center;
+    gap             : 1rem;
+    clip-path       : var(--menu-mostrar);
+    transition      : clip-path 0.5s ease-in-out;
+}
+
+.nav-img {
+    display: block;
+    width  : 8.5rem;
+}
+
+.nav-link {
+    color    : var(--color-text);
+    font-size: 1.5rem;
+}
+
+.nav-label {
+    grid-area : menu;
+    z-index   : 1;
+    transition: .4s opacity;
+}
+
+.nav-label-open {
+    cursor        : pointer;
+    opacity       : var(--opacidad-abrir);
+    pointer-events: var(--puntero-abrir);
+}
+
+.nav-label-close {
+    cursor        : pointer;
+    opacity       : var(--opacidad-cerrar);
+    pointer-events: var(--puntero-cerrar);
+}
+
+.nav-icon {
+    width: 2.5rem;
+}
+

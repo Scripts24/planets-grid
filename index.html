@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,29 @@
     <!--CSS-->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+    <nav class="nav container">
+        <a href="#" class="nav-figure"><img src="./img/logo.svg" class="nav-img"></a>
+
+        <ul class="nav-menu">
+            <li class="nav-list"><a href="#" class="nav-link">Inicio</a></li>
+            <li class="nav-list"><a href="#" class="nav-link">Planetas</a></li>
+            <li class="nav-list"><a href="#" class="nav-link">Satélites</a></li>
+            <li class="nav-list"><a href="#" class="nav-link">Conoce +</a></li>
+        </ul>
+
+        <!--Apertura del menu de hamburguesa-->
+        <label for="menu" class="nav-label nav-label-open">
+            <img src="./img/menu.svg" class="nav-icon">
+        </label>
+        <!--Cierre del menu de hamburguesa-->
+        <label for="menu" class="nav-label nav-label-close">
+            <img src="./img/close.svg" class="nav-icon">
+        </label>
+
+        <input type="checkbox" id="menu">
+    </nav>
 </body>
+
 </html>
